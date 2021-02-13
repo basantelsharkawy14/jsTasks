@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let developer = {
+         name: "Ahmed",
+         birthYear: 1992,
+         skills: ["PhotoShop", "HTML", "CSS", "JS"],
+         getAge: function () {
+             return 2010 - this.birthYear;
+         },
+       };
+       
+       var [designSkills,...devSkills] = developer.skills;
+       console.log(devSkills);
+       const newSkills = ["ES6", "ES7", "ES8",...devSkills];
+       console.log(newSkills);
+
+       const restaurant = {
+        name: "ES-Snacks",
+        drinks: {
+          hot: ["coffee", "tea"],
+          cold: ["pepsi", "7up", "fanta", "juice"],
+          },
+        meals: ["burger", "pizza"],
+        
+        };
+        const order ={
+            name:"ali",
+            meal: 1,
+            drink:{
+                h:[1,2],
+                c1:[1,2,3,4]
+            },
+        }
+        //var {name:mn,meals:[1:2]} = restaurant;
+        var {drinks:{cold:coldDrinks}} = restaurant;
+        console.log(coldDrinks);
+
+        var fcold = () => {
+            let res = [];
+            for(let i=0;i<coldDrinks.length;i++){
+                if(coldDrinks[i].includes("u"))
+                res.push(coldDrinks[i]);
+            }
+            return res;
+        }
+        console.log(fcold());
+        
+        function addOrder({name,meal,drink:{}}={}){
+            let m="";
+            if(meal=1)
+             m="burgur";
+            else if(meal=2)
+            m="pizza";
+
+            return `hello ${name} you want to ${m}`;
+        }
+        console.log(addOrder(order))
+
+        
+
+
+    </script>
+</body>
+</html>

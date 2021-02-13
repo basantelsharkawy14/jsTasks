@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Vehicle {
+            static numberOfCars = 0;
+            constructor (wheels = 4 , speed = 100){
+                this.wheels=wheels
+                this.speed=speed;
+                Vehicle.numberOfCars++;
+            }
+            static compareSpeed(...obj) {
+                let max = obj[0].speed;
+                const result = obj.map(function (item, index) {
+                if (item.speed > max) {
+                  max = item.speed;
+                }
+        });
+                console.log(max);
+    }
+            static  getNumberOfVehicle() {
+                return Vehicle.numberOfCars;
+            }
+      }
+
+        class bike extends Vehicle {
+            constructor (wheels = 2 , speed = 10 , basket = false){
+               super(wheels,speed);
+               this.basket=basket;
+            }
+        }
+
+        var v1 = new Vehicle(5,10);
+        var v2 = new Vehicle(7,10);
+        //var v3 = new Vehicle(6,899);
+        var v4 = new Vehicle(7,100);
+        
+        Vehicle.compareSpeed(v1,v2,v4);
+        console.log(Vehicle.getNumberOfVehicle());
+        
+    </script>
+</body>
+</html>

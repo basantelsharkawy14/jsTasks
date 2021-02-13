@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arrayOfFood = ["burger", "pizza", "donuts", "pizza", "koshary", "donuts", "seafood", "burger"]
+        let newSet = new Set(arrayOfFood);
+        newSet.add('pasta');
+        console.log(newSet);
+        newSet.delete('burger');
+        console.log(newSet);
+        var clearSet = (set) => {
+            for(let i of set )
+            {
+                set.clear();
+            }
+
+        }
+         clearSet(newSet);
+        console.log(newSet);
+    </script>
+</body>
+</html>
